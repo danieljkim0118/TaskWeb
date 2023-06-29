@@ -1,4 +1,4 @@
-target2source_retriever = {
+target2source_roe = {
     "anli_r1": ["cb", "hellaswag", "rte", "snli", "wsc"],
     "anli_r2": ["cb", "hellaswag", "rte", "snli", "wsc"],
     "anli_r3": ["cb", "hellaswag", "rte", "snli", "wsc"],
@@ -54,48 +54,6 @@ target2source_taskweb = {
     "wsc": ["anli_r3", "qnli", "qqp", "snli", "socialiqa"]
 }
 
-target2source_random = {
-    "anli_r1": ["cosmosqa", "piqa", "scitail", "socialiqa", "squad_v2"],
-    "anli_r2": ["cb", "qqp", "scitail", "snli", "wsc"],
-    "anli_r3": ["imdb", "mrpc", "qnli", "qqp", "quartz"],
-    "cb": ["imdb", "mrpc", "qqp", "quartz", "wsc"],
-    "copa": ["qqp", "snli", "socialiqa", "squad_v2", "winogrande"],
-    "hellaswag": ["qqp", "snli", "socialiqa", "squad_v2", "winogrande"],
-    "rte": ["cb", "qnli", "qqp", "snli", "squad_v2"],
-    "story_cloze": ["anli_r3", "boolq", "qnli", "qqp", "scitail"],
-    "wic": ["copa", "hellaswag", "mrpc", "squad_v2", "wsc"],
-    "winogrande": ["anli_r3", "mrpc", "qnli", "rte", "snli"],
-    "wsc": ["imdb", "mrpc", "qnli", "qqp", "quartz"]
-}
-
-target2source_taskshop_worst = {
-    "anli_r1": ["copa", "imdb", "qqp", "quartz", "stsb"],
-    "anli_r2": ["copa", "imdb", "qqp", "quartz", "stsb"],
-    "anli_r3": ["copa", "imdb", "qqp", "quartz", "stsb"],
-    "cb": ["boolq", "imdb", "qqp", "quartz", "stsb"],
-    "copa": ["boolq", "imdb", "qqp", "quartz", "scitail"],
-    "hellaswag": ["boolq", "cb", "imdb", "qqp", "rte"],
-    "rte": ["copa", "imdb", "qqp", "quartz", "rotten_tomatoes"],
-    "story_cloze": ["boolq", "qqp", "quartz", "scitail", "snli"],
-    "wic": ["imdb", "qqp", "quartz", "rotten_tomatoes", "squad_v2"],
-    "winogrande": ["boolq", "imdb", "qqp", "rotten_tomatoes", "rte"],
-    "wsc": ["imdb", "qqp", "quartz", "rotten_tomatoes", "stsb"]
-}
-
-target2source_taskweb_worst = {
-    "anli_r1": ["cb", "copa", "hellaswag", "qqp", "quartz"],
-    "anli_r2": ["cb", "copa", "hellaswag", "qqp", "quartz"],
-    "anli_r3": ["cb", "copa", "hellaswag", "qqp", "quartz"],
-    "cb": ["copa", "hellaswag", "mrpc", "squad_v2", "wsc"],
-    "copa": ["anli_r3", "imdb", "mrpc", "qqp", "snli"],
-    "hellaswag": ["cb", "qnli", "qqp", "snli", "squad_v2"],
-    "rte": ["copa", "mrpc", "qqp", "snli", "wic"],
-    "story_cloze": ["anli_r3", "imdb", "mrpc", "qqp", "snli"],
-    "wic": ["hellaswag", "piqa", "quartz", "squad_v2", "wsc"],
-    "winogrande": ["cb", "qqp", "scitail", "snli", "wsc"],
-    "wsc": ["hellaswag", "rotten_tomatoes", "squad_v2", "stsb", "wic"]
-}
-
 target2source_all = {
     "anli_r1": ["boolq", "cb", "copa", "cosmosqa", "hellaswag", "imdb", "mrpc", "piqa", "qnli", "qqp", "quartz", "rotten_tomatoes", "rte", "scitail", "snli", "socialiqa", "squad_v2", "stsb", "wic", "winogrande", "wsc"],
     "anli_r2": ["boolq", "cb", "copa", "cosmosqa", "hellaswag", "imdb", "mrpc", "piqa", "qnli", "qqp", "quartz", "rotten_tomatoes", "rte", "scitail", "snli", "socialiqa", "squad_v2", "stsb", "wic", "winogrande", "wsc"],
@@ -110,7 +68,7 @@ target2source_all = {
     "wsc": ["anli_r3", "boolq", "cb", "copa", "cosmosqa", "hellaswag", "imdb", "mrpc", "piqa", "qnli", "qqp", "quartz", "rotten_tomatoes", "rte", "scitail", "snli", "socialiqa", "squad_v2", "stsb", "wic", "winogrande"]
 }
 
-target2source_size1 = {
+target2source_top1 = {
     "anli_r1": ["snli"],
     "anli_r2": ["snli"],
     "anli_r3": ["snli"],
@@ -124,7 +82,7 @@ target2source_size1 = {
     "wsc": ["anli_r3"]
 }
 
-target2source_size2 = {
+target2source_top3 = {
     "anli_r1": ["cb", "cosmosqa", "snli"],
     "anli_r2": ["cb", "cosmosqa", "snli"],
     "anli_r3": ["cb", "cosmosqa", "snli"],
@@ -138,7 +96,7 @@ target2source_size2 = {
     "wsc": ["anli_r3", "snli", "winogrande"]
 }
 
-target2source_size3 = {
+target2source_top10 = {
     "anli_r1": ["cb", "cosmosqa", "hellaswag", "piqa", "qnli", "rte", "scitail", "snli", "socialiqa", "wsc"],
     "anli_r2": ["cb", "cosmosqa", "hellaswag", "piqa", "qnli", "rte", "scitail", "snli", "socialiqa", "wsc"],
     "anli_r3": ["cb", "cosmosqa", "hellaswag", "piqa", "qnli", "rte", "scitail", "snli", "socialiqa", "wsc"],
@@ -152,35 +110,35 @@ target2source_size3 = {
     "wsc": ["anli_r3", "cb", "cosmosqa", "hellaswag", "piqa", "rte", "snli", "socialiqa", "wic", "winogrande"]
 }
 
-target2source_ablation1 = {
+target2source_mix1 = {
     "anli_r3": ["boolq", "hellaswag", "rotten_tomatoes", "rte", "snli"],
     "copa": ["anli_r3", "cosmosqa", "scitail", "socialiqa", "winogrande"],
     "hellaswag": ["cosmosqa", "piqa", "rte", "snli", "socialiqa"],
     "rte": ["anli_r3", "cosmosqa", "snli", "socialiqa", "winogrande"]
 }
 
-target2source_ablation2 = {
+target2source_mix2 = {
     "anli_r3": ["boolq", "hellaswag", "qqp", "rotten_tomatoes", "snli"],
     "copa": ["anli_r3", "scitail", "snli", "socialiqa", "winogrande"],
     "hellaswag": ["cosmosqa", "qnli", "rte", "snli", "socialiqa"],
     "rte": ["anli_r3", "qqp", "snli", "socialiqa", "winogrande"]
 }
 
-target2source_ablation3 = {
+target2source_mix3 = {
     "anli_r3": ["copa", "hellaswag", "qqp", "rotten_tomatoes", "snli"],
     "copa": ["anli_r3", "qqp", "scitail", "snli", "socialiqa"],
     "hellaswag": ["cb", "cosmosqa", "qnli", "snli", "socialiqa"],
     "rte": ["mrpc", "qqp", "snli", "socialiqa", "winogrande"]
 }
 
-target2source_ablation4 = {
+target2source_mix4 = {
     "anli_r3": ["cb", "copa", "hellaswag", "qqp", "rotten_tomatoes"],
     "copa": ["anli_r3", "mrpc", "qqp", "scitail", "snli"],
     "hellaswag": ["cb", "qnli", "qqp", "snli", "socialiqa"],
     "rte": ["copa", "mrpc", "qqp", "snli", "winogrande"]
 }
 
-target2source_ablation5 = {
+target2source_mix5 = {
     "anli_r3": ["cb", "copa", "hellaswag", "qqp", "quartz"],
     "copa": ["anli_r3", "imdb", "mrpc", "qqp", "snli"],
     "hellaswag": ["cb", "qnli", "qqp", "snli", "squad_v2"],

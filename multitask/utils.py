@@ -42,3 +42,20 @@ def f1_score(predictions, references, pos_label, label_list, average="binary"):
         return f1_weighted
     else:
         raise NotImplementedError("Please specify the appropriate average value!")
+
+def format_prompt(prompt):
+    prompt = prompt.replace('/', '_')
+    prompt = prompt.replace(' ', '_')
+    return prompt
+
+def hyperparam2str(model_name, prompt_name, hyperparam_config, seed_list=None):
+    learning_rate = lr2str(hyperparam_config["source_learning_rate"])
+    seed_list = hyperparam_config["seed_list"] if "seed_list" in hyperparam_config else seed_list
+    return [f"{model_name}-{prompt_name}-lr{learning_rate}-s{seed}" for seed in seed_list]
+
+def list2str(input_list):
+    return "_".join(input_list)
+
+def lr2str(learning_rate):
+    out = str("{:.0e}".format(learning_rate))
+    return f"{out[0]}e{out[-1]}"
