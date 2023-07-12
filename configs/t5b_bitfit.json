@@ -1,0 +1,107 @@
+{
+    "anli_r3": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "boolq": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 16
+    },
+    "cb": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 8
+    },
+    "copa": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "cosmosqa": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 32
+    },
+    "hellaswag": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 16
+    },
+    "imdb": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 32
+    },
+    "mrpc": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "piqa": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 16
+    },
+    "qnli": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "qqp": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "quartz": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 16
+    },
+    "rotten_tomatoes": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "rte": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 32
+    },
+    "scitail": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "snli": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "socialiqa": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 32
+    },
+    "stsb": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "wic": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "winogrande": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    },
+    "wsc": {
+        "epochs": 20,
+        "learning_rate": 3e-4,
+        "batch_size": 64
+    }
+}
