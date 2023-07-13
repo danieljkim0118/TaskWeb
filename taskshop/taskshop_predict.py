@@ -6,7 +6,7 @@ import pickle
 from tqdm import tqdm
 from utils import combine_scores, llm2dir, retriever2dir
 
-DATA_DIR = "../data/pairwise_transfer"
+DATA_DIR = "../data/taskweb"
 
 def process_scores(score_list):
     """post-process pairs of scores from source -> pivot and pivot -> target transfers.

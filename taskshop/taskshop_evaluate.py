@@ -9,7 +9,7 @@ from metrics import ndcg, TASK2METRICS
 from utils import combine_scores, get_task2dir, lr2str, taskshop_llm2dir, taskshop_roe2dir, SEED_LIST
 
 CONFIG_DIR = "../configs"
-PAIRWISE_TRANSFER_DIR = "../data/pairwise_transfer"
+TASKWEB_DIR = "../data/taskweb"
 SCORE_DIR = "../transfer/outputs_1000"
 
 def load_scores(source_task, target_task, task2dir_transfer, config_dir, model="t5l", adaptation="finetune"):
@@ -69,7 +69,7 @@ def evaluate_selection(target_task, source_task_list, task2dir_transfer, config_
     with open(pred_path, "rb") as f:
         pred_dict = pickle.load(f)
     # load pairwise transfer scores
-    with open(os.path.join(PAIRWISE_TRANSFER_DIR, "pairwise_transfer_scores.p"), "rb") as f:
+    with open(os.path.join(TASKWEB_DIR, "taskweb.p"), "rb") as f:
         label_dict = pickle.load(f)
     source_task_preds = []
     source_task_labels = []
