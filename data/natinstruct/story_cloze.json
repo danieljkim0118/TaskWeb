@@ -1,0 +1,20 @@
+{
+    "Categories": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you're given a four sentences of story written in natural language and two options. Your job is to complete end part of the story by choosing the appropriate last sentence which is coherent with the given sentences."
+    ],
+    "Positive Examples": [
+        {
+            "input": "Josh loved when his mom baked apple pie. He hated how he always had to wait until after dinner though. So he decided this time he would sneak a piece before dinner. The eggs his mom used must have been bad though. <sep> (A) Josh thought that the pie was delicious. (B) Josh got sick.",
+            "output": "B",
+            "explanation": ""
+        },
+        {
+            "input": "context: There was an extremely obnoxious boy in Kerry's economics class. He monopolized every class discussion with his mediocre ideas. The professor could never get him to be quiet. One day, he showed up to class with laryngitis. <sep> (A) Kerry was disappointed. (B) Kerry was so grateful!",
+            "output": "A",
+            "explanation": ""
+        }
+    ]
+}

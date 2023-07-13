@@ -1,0 +1,20 @@
+{
+    "Categories": [
+        "Text Similarity"
+    ],
+    "Definition": [
+        "In this task, your job is to assign a score from 0.0 to 5.0 that denotes how similar the following two sentences are, denoted as Sentence1 and Sentence2."
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: A woman picks up and holds a baby kangaroo. Sentence2: A woman picks up and holds a baby kangaroo in her arms.",
+            "output": "4.6",
+            "explanation": ""
+        },
+        {
+            "input": "Sentence1: The men are playing cricket. Sentence2: The men are playing basketball.",
+            "output": "2.2",
+            "explanation": ""
+        }
+    ]
+}

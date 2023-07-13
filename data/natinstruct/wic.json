@@ -1,0 +1,20 @@
+{
+    "Categories": [
+        "Word Meaning"
+    ],
+    "Definition": [
+        "In this task, you are given a word and two sentences, denoted as Sentence1 and Sentence2, that both contain this word. Your job is to decide whether the meanings of this word in both sentences are the same or not. Answer in yes or no."
+    ],
+    "Positive Examples": [
+        {
+            "input": "Word: level Sentence1: The water reached ankle level. Sentence2: The pictures were at the same level.",
+            "output": "yes",
+            "explanation": ""
+        },
+        {
+            "input": "Word: size Sentence 1: That's the size of the situation. Sentence2: A wolf is about the size of a large dog.",
+            "output": "no",
+            "explanation": ""
+        }
+    ]
+}

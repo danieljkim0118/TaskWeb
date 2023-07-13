@@ -1,0 +1,20 @@
+{
+    "Categories": [
+        "Textual Entailment"
+    ],
+    "Definition": [
+        "In this task, your job is to decide whether some information can be inferred from a given passage. Indicate your answer in yes or no."
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: Vice President Dick Cheney on Tuesday hurled an obscenity on the Senate floor to punctuate an angry exchange with Vermont Sen. Patrick Leahy as all senators gathered for their annual photo. Sentence: Cheney cursed at Sen. Patrick Leahy.",
+            "output": "yes",
+            "explanation": ""
+        },
+        {
+            "input": "Passage: American tobacco companies were showing a profit most quarters due to export sales of cigarettes and diversification of products sold including food. Sentence: PM often entered markets with both cigarettes and food.",
+            "output": "no",
+            "explanation": ""
+        }
+    ]
+}

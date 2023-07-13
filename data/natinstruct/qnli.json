@@ -1,0 +1,20 @@
+{
+    "Categories": [
+        "Textual Entailment"
+    ],
+    "Definition": [
+        "In this task, given a context, decide whether the question can be answered or not using information from the context. Your answer must either be yes or no."
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: On 31 December 1853, the Ottoman forces at Calafat moved against the Russian force at Chetatea or Cetate, a small village nine miles north of Calafat, and engaged them on 6 January 1854. Question: What is the name of the village 9 miles north of Calafat where the Ottoman forces attacked the Russians?",
+            "output": "yes",
+            "explanation": ""
+        },
+        {
+            "input": "Context: Unlike the two seasons before it and most of the seasons that followed, Digimon Tamers takes a darker and more realistic approach to its story featuring Digimon who do not reincarnate after their deaths and more complex character development in the original Japanese. Question: When did the third Digimon series begin?",
+            "output": "no",
+            "explanation": ""
+        }
+    ]
+}

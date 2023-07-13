@@ -1,0 +1,20 @@
+{
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Definition": [
+        "In this task, you are given a movie review. Decide whether the given review conveys a positive or negative sentiment."
+    ],
+    "Positive Examples": [
+        {
+            "input": "the rock is destined to be the 21st century's new ' conan ' and that he's going to make a splash even greater than arnold schwarzenegger , jean-claud van damme or steven segal .",
+            "output": "positive",
+            "explanation": ""
+        },
+        {
+            "input": "watching haneke's film is , aptly enough , a challenge and a punishment . but watching huppert , a great actress tearing into a landmark role , is riveting .",
+            "output": "negative",
+            "explanation": ""
+        }
+    ]
+}

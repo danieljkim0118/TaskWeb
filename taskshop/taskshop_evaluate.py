@@ -8,6 +8,7 @@ from load import load_results
 from metrics import ndcg, TASK2METRICS
 from utils import combine_scores, get_task2dir, lr2str, taskshop_llm2dir, taskshop_roe2dir, SEED_LIST
 
+CONFIG_DIR = "../configs"
 PAIRWISE_TRANSFER_DIR = "../data/pairwise_transfer"
 SCORE_DIR = "../transfer/outputs_1000"
 
@@ -46,13 +47,14 @@ def load_scores(source_task, target_task, task2dir_transfer, config_dir, model="
     result = np.mean(results_target, axis=0)
     return result
 
-def evaluate_selection(target_task, source_task_list, task2dir_transfer, taskshop_info, transfer_info=None, regret_k=None, method="llm", lmbda=0.7):
+def evaluate_selection(target_task, source_task_list, task2dir_transfer, config_dir, taskshop_info, transfer_info=None, regret_k=None, method="llm", lmbda=0.7):
     """Evaluate the overall ranking and top-k precision of TaskShop.
 
     Args:
         target_task (str): target task of interest
         source_task_list (list[str]): list of source tasks
         task2dir_transfer (dict[str -> str]): dictionary mapping each task to its directory with transfer scores
+        config_dir (str): path to directory with json files containing model hyperparameter configs
         taskshop_info (dict[str]): dictionary containing information about TaskShop settings
         transfer_info (dict[str], optional): dictionary containing info about the model and adaptation method. Defaults to None.
         regret_k (int, optional): value of k for computing regret @ k (returns NDCG if None). Defaults to None.
@@ -90,10 +92,10 @@ def evaluate_selection(target_task, source_task_list, task2dir_transfer, tasksho
     assert(sorted(pred_ranking) == sorted(gold_ranking))
     if regret_k:  # compute regret @ k
         # compute average top-5 score according to actual pairwise transfer
-        max_label_list =  [load_scores(source_task, target_task, task2dir_transfer) for source_task in gold_ranking[:regret_k]]
+        max_label_list =  [load_scores(source_task, target_task, task2dir_transfer, config_dir) for source_task in gold_ranking[:regret_k]]
         max_label = sum(max_label_list) / len(max_label_list)
         # compute average top-5 score according to TaskShop predictions
-        score_list = [load_scores(source_task, target_task, task2dir_transfer) for source_task in pred_ranking[:regret_k]]
+        score_list = [load_scores(source_task, target_task, task2dir_transfer, config_dir) for source_task in pred_ranking[:regret_k]]
         score = sum(score_list) / len(score_list)
         score = (max_label - score) / max_label
     else:  # compute NDCG
@@ -151,8 +153,8 @@ if __name__ == "__main__":
         # iterate over all tasks in each category
         for target_task in task_list_custom:
             source_task_list = [task for task in task_list if task != target_task]
-            score, pred_rankings, gold_rankings = evaluate_selection(target_task, source_task_list, task2dir_transfer, taskshop_info, transfer_info, method=args.task_selection, lmbda=lmbda)
-            score_topk, pred_rankings, gold_rankings = evaluate_selection(target_task, source_task_list, task2dir_transfer, taskshop_info, transfer_info, regret_k=5, method=args.task_selection, lmbda=lmbda)
+            score, pred_rankings, gold_rankings = evaluate_selection(target_task, source_task_list, task2dir_transfer, CONFIG_DIR, taskshop_info, transfer_info, method=args.task_selection, lmbda=lmbda)
+            score_topk, pred_rankings, gold_rankings = evaluate_selection(target_task, source_task_list, task2dir_transfer, CONFIG_DIR, taskshop_info, transfer_info, regret_k=5, method=args.task_selection, lmbda=lmbda)
             score_avg += score
             score_topk_avg += score_topk
             score_avg_all += score
