@@ -6,7 +6,7 @@ import pickle
 from tqdm import tqdm
 from utils import combine_scores, llm2dir, retriever2dir
 
-PAIRWISE_TRANSFER_DIR = "../data/pairwise_transfer"
+DATA_DIR = "../data/pairwise_transfer"
 
 def process_scores(score_list):
     """post-process pairs of scores from source -> pivot and pivot -> target transfers.
@@ -45,7 +45,7 @@ def predict_transfer_llm(target_task, source_task, pivot_task_list, transfer_inf
     with open(llm2dir(llm_info), "rb") as f:
         pred_dict = pickle.load(f)
     # load pairwise transfer scores
-    with open(os.path.join(PAIRWISE_TRANSFER_DIR, "pairwise_transfer_scores.p"), "rb") as f:
+    with open(os.path.join(DATA_DIR, "pairwise_transfer_scores.p"), "rb") as f:
         label_dict = pickle.load(f)
     transfer_adapt, transfer_model = transfer_info["adapt"], transfer_info["model"]
     # direct score is averaged between source -> target and target -> source prediction since LLM predictions are direction-agnostic
@@ -100,7 +100,7 @@ def predict_transfer_roe(target_task, source_task, pivot_task_list, transfer_inf
     with open(retriever2dir(retriever_info), "rb") as f:
         pred_dict = pickle.load(f)
     # load pairwise transfer scores
-    with open(os.path.join(PAIRWISE_TRANSFER_DIR, "pairwise_transfer_scores.p"), "rb") as f:
+    with open(os.path.join(DATA_DIR, "pairwise_transfer_scores.p"), "rb") as f:
         label_dict = pickle.load(f)
     if transfer_info is not None:
         transfer_adapt, transfer_model = transfer_info["adapt"], transfer_info["model"]

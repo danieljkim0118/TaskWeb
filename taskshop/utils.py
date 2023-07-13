@@ -1,8 +1,6 @@
 import json
 import numpy as np
 import os
-import torch
-import torch.nn.functional as F
 
 TASK2FORMAT = {
     "anli_r3": "anli",
@@ -83,7 +81,7 @@ def llm2dir(llm_info):
     path = os.path.join("scores", instructions, f"scores_{model}.p")
     return path
 
-def retriever2dir(retriever_info):
+def roe2dir(retriever_info):
     model = retriever_info["model"]
     sim_method = retriever_info["sim_method"]
     prompt_num = retriever_info["prompt_num"]
@@ -98,7 +96,7 @@ def taskshop_llm2dir(taskshop_info, transfer_info, lmbda):
         path = os.path.join("scores", "taskshop", f"{transfer_info['model']}_{transfer_info['adapt']}_llm_{model}_lmbda0{int(lmbda * 10)}.p")
     return path
 
-def taskshop_retriever2dir(taskshop_info, transfer_info, lmbda):
+def taskshop_roe2dir(taskshop_info, transfer_info, lmbda):
     model = taskshop_info["model"]
     sim_method = taskshop_info["sim_method"]
     prompt_num = taskshop_info["prompt_num"]
