@@ -1,0 +1,8 @@
+{
+    "epoch": 15.0,
+    "train_loss": 0.3875366528828939,
+    "train_runtime": 23.9935,
+    "train_samples": 1000,
+    "train_samples_per_second": 625.17,
+    "train_steps_per_second": 10.003
+}

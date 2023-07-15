@@ -10,7 +10,7 @@ from utils import combine_scores, get_task2dir, lr2str, taskshop_llm2dir, tasksh
 
 CONFIG_DIR = "../configs"
 TASKWEB_DIR = "../data/taskweb"
-SCORE_DIR = "../transfer/outputs_1000"
+SCORE_DIR = "../data/taskweb/results"
 
 def load_scores(source_task, target_task, task2dir_transfer, config_dir, model="t5l", adaptation="finetune"):
     """Helper for loading model performances for a given (source -> target) transfer

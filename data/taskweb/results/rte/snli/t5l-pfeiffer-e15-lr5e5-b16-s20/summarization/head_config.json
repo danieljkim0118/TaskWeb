@@ -1,0 +1,14 @@
+{
+  "config": null,
+  "hidden_size": 1024,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "model_class": "T5ForConditionalGeneration",
+  "model_name": null,
+  "model_type": "t5",
+  "name": null,
+  "num_labels": 2,
+  "version": "3.1.0"
+}

@@ -1,0 +1,9 @@
+{
+    "epoch": 20.0,
+    "eval_average_metrics": 74.5885850462933,
+    "eval_loss": 1.036452293395996,
+    "eval_pearson": 73.1897489072344,
+    "eval_runtime": 7.4034,
+    "eval_samples_per_second": 202.61,
+    "eval_spearmanr": 75.9874211853522
+}

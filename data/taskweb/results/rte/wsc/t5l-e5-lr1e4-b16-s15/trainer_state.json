@@ -1,0 +1,25 @@
+{
+  "best_metric": null,
+  "best_model_checkpoint": null,
+  "epoch": 5.0,
+  "global_step": 315,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 5.0,
+      "step": 315,
+      "total_flos": 4172154767376384.0,
+      "train_loss": 0.2035398453000992,
+      "train_runtime": 159.9088,
+      "train_samples_per_second": 31.268,
+      "train_steps_per_second": 1.97
+    }
+  ],
+  "max_steps": 315,
+  "num_train_epochs": 5,
+  "total_flos": 4172154767376384.0,
+  "trial_name": null,
+  "trial_params": null
+}

@@ -1,0 +1,9 @@
+{
+    "epoch": 3.0,
+    "eval_accuracy": 0.28944724798202515,
+    "eval_loss": 1.4075791835784912,
+    "eval_runtime": 37.7465,
+    "eval_samples": 2985,
+    "eval_samples_per_second": 79.08,
+    "eval_steps_per_second": 2.49
+}
