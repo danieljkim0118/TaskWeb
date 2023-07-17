@@ -66,7 +66,7 @@ SEED_IDX=$((SLURM_ARRAY_TASK_ID - TASK_IDX * NUM_SEEDS))
 SEED=${SEED_LIST[$SEED_IDX]}
 
 # Input training file.
-TRAIN_FILE=data/train/${MULTI_TASK_LIST_STR}.json
+TRAIN_FILE=data/multitask/${MULTI_TASK_LIST_STR}.json
 
 # Sample size of our data. We use 2,000 samples from each dataset.
 SAMPLE_SIZE=2000
