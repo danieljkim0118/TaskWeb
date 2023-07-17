@@ -72,7 +72,7 @@ python taskshop_evaluate.py --task_selection roe --model_id all-MiniLM-L6-v2 --t
 Again, use `roe` to use Retrieval-of-Experts and `llm` to use LLM-similarity as the backbone task selection module. Omit the `target_num` argument when using `llm`.
 
 ## Multi-Task Selection
-Before proceeding, note that we provide the training and evaluation results for our multi-task training experiments - skip the following two scripts (`train.sh` and `eval.sh`) if needed. The complete list of our multi-task training set descriptions are provided in `multitask/multitask_info.py`.
+Before proceeding, note that we provide the training and evaluation results for our multi-task training experiments - skip the following two scripts (`train.sh` and `eval.sh`) if needed. Meanwhile, our multi-task trained models are located [here](http://storage.googleapis.com/taskweb) (check the keys and download the models of interest by appending the keys to the address). The complete list of our multi-task training set descriptions are provided in `multitask/multitask_info.py`.
 
 To perform multi-task finetuning with our training sets, use the following command which assumes that `slurm` is installed as well as GPUs of $\geq$ 64G memory. (We use a single NVIDIA A100 for each of our experiments.)
 ```
