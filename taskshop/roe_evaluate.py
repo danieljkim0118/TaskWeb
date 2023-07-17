@@ -1,3 +1,4 @@
+import argparse
 import json
 import numpy as np
 import os
@@ -101,15 +102,30 @@ def evaluate_selection(target_task, source_task_list, task2dir_transfer, config_
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--model_id",
+        type=str,
+        default="all-MiniLM-L6-v2",
+        help="HuggingFace model ID for evaluating task similarity."
+    )
+    parser.add_argument(
+        "--target_num",
+        type=int,
+        default=32,
+        help="Number of target examples used for retrieval."
+    )
+    args = parser.parse_args()
+
     # obtain predictions for all tasks in TaskWeb
     task_list = ["anli_r3", "boolq", "cb", "copa", "cosmosqa", "hellaswag", "imdb", "mrpc", "piqa", "qnli", "qqp", "quartz", "rotten_tomatoes", "rte", "scitail", "snli", "socialiqa", "squad_v2", "stsb", "wic", "winogrande", "wsc"]
     task2dir_transfer = get_task2dir(SCORE_DIR, task_list)
 
     # information regarding RoE
     roe_info = {
-        "model": "all-MiniLM-L6-v2",
+        "model": args.model_id,
         "sim_method": "dot",
-        "prompt_num": "32"
+        "prompt_num": str(args.target_num)
     }
 
     # information regarding pairwise transfer

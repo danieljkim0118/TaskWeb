@@ -4,7 +4,7 @@
 #SBATCH --partition=PARTITION_NAME
 #SBATCH --account=ACCOUNT_NAME
 #SBATCH --cpus-per-task=NUM_CPUS
-#SBATCH --mem=40G
+#SBATCH --mem=64G
 #SBATCH --gres=gpu:a100:1
 #SBATCH --time=04:30:00
 #SBATCH --array=0-2%3
@@ -18,6 +18,9 @@ export HF_EVALUATE_CACHE="PATH_TO_CACHE"
 export HF_METRICS_CACHE="PATH_TO_CACHE"
 export HF_MODULES_CACHE="PATH_TO_CACHE"
 export NLTK_DATA="PATH_TO_CACHE"
+
+# Output parent directory.
+OUTPUT_DIR_NAME="PATH_TO_OUTPUT_DIR"
 
 # Added to handle exception cases where the SLURM system crashes or something like that
 if [[ -z "$SLURM_RESTART_COUNT" || "$SLURM_RESTART_COUNT" -lt 3 ]]
@@ -62,14 +65,11 @@ NUM_SEEDS=${#SEED_LIST[@]}
 SEED_IDX=$((SLURM_ARRAY_TASK_ID - TASK_IDX * NUM_SEEDS))
 SEED=${SEED_LIST[$SEED_IDX]}
 
-# Input training file. 
+# Input training file.
 TRAIN_FILE=data/train/${MULTI_TASK_LIST_STR}.json
 
 # Sample size of our data. We use 2,000 samples from each dataset.
 SAMPLE_SIZE=2000
-
-# Output directory.
-OUTPUT_DIR_NAME="MULTITASK"
 
 # Set the maximum length to the longest one in the multi-task training set
 MAX_LENGTH=128

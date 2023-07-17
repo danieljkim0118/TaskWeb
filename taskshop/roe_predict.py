@@ -1,3 +1,4 @@
+import argparse
 import os
 import pickle
 import random
@@ -112,18 +113,41 @@ def compute_scores_all(task_list, model_name, num_src=100, num_tgt=32, method="d
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--model_id",
+        type=str,
+        default="all-MiniLM-L6-v2",
+        help="HuggingFace model ID for evaluating task similarity."
+    )
+    parser.add_argument(
+        "--source_num",
+        type=int,
+        default=100,
+        help="Number of source examples to use for retrieval."
+    )
+    parser.add_argument(
+        "--target_num",
+        type=int,
+        default=32,
+        help="Number of target examples to use for retrieval."
+    )
+    args = parser.parse_args()
+
     # load tokenizer and model from HuggingFace Hub
-    model_path = "all-MiniLM-L6-v2"
-    model_name = model_path.split('/')[-1]
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
-    model = AutoModel.from_pretrained(model_path)
+    model_name = args.model_id.split('/')[-1]
+    tokenizer = AutoTokenizer.from_pretrained(args.model_id)
+    model = AutoModel.from_pretrained(args.model_id)
 
     # list of all tasks
     task_list = ["anli_r3", "boolq", "cb", "copa", "cosmosqa", "hellaswag", "imdb", "mrpc", "piqa", "qnli", "qqp", "quartz", "rotten_tomatoes", "rte", "scitail", "snli", "socialiqa", "squad_v2", "story_cloze", "stsb", "wic", "winogrande", "wsc"]
 
     # Step 1: compute and save embeddings
-    prompter = Task2Prompt(tokenizer, model, num=100)
+    prompter = Task2Prompt(tokenizer, model, num=args.source_num)
+    prompter.save_embeddings(task_list, model_name)
+
+    prompter = Task2Prompt(tokenizer, model, num=args.target_num)
     prompter.save_embeddings(task_list, model_name)
 
     # Step 2: use the embeddings to compute similarity scores between tasks
-    score_dict_all = compute_scores_all(task_list, model_name=model_name, num_src=100, num_tgt=32, method='dot')
+    score_dict_all = compute_scores_all(task_list, model_name=model_name, num_src=args.source_num, num_tgt=args.target_num, method='dot')

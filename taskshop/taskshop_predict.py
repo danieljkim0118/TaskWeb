@@ -196,19 +196,31 @@ if __name__ == "__main__":
         default="roe",
         help="Task selection method to use (llm or roe)."
     )
+    parser.add_argument(
+        "--model_id",
+        type=str,
+        default="all-MiniLM-L6-v2",
+        help="Model ID for evaluating task similarity."
+    )
+    parser.add_argument(
+        "--target_num",
+        type=int,
+        default=32,
+        help="Number of target examples used for retrieval."
+    )
     args = parser.parse_args()
 
     # information regarding LLM-similarity
     llm_info = {
-        "model": "text-davinci-003",
+        "model": args.model_id,
         "instructions": "natinstruct"
     }
 
     # information regarding RoE
     roe_info = {
-        "model": "all-MiniLM-L6-v2",
+        "model": args.model_id,
         "sim_method": "dot",
-        "prompt_num": "32"
+        "prompt_num": str(args.target_num)
     }
 
     # information regarding pairwise transfer scores
