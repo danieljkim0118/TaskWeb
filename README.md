@@ -1,5 +1,5 @@
 # TaskWeb
-This is the original implementation of "TaskWeb: Selecting Better Source Tasks for Multi-task NLP" by [Joongwon Kim](https://danieljkim0118.github.io/), [Akari Asai](https://akariasai.github.io/), [Gabriel Ilharco](http://gabrielilharco.com/) and [Hannaneh Hajishirzi](https://homes.cs.washington.edu/~hannaneh/).
+This is the original implementation of [TaskWeb: Selecting Better Source Tasks for Multi-task NLP](https://arxiv.org/abs/2305.13256) by [Joongwon Kim](https://danieljkim0118.github.io/), [Akari Asai](https://akariasai.github.io/), [Gabriel Ilharco](http://gabrielilharco.com/) and [Hannaneh Hajishirzi](https://homes.cs.washington.edu/~hannaneh/).
 
 <!-- ![Overview of TaskWeb](img/taskweb_cover.jpg) -->
 
